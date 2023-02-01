@@ -1,5 +1,12 @@
 This repository contains the code for the dual encoder model described in "Code Search as Multi-Link Translation Using Dual Encoders".
 
+
+## Dependencies
+The required dependencies must be installed to run the source code.
+```
+pip install -r requirements.txt
+```
+
 ## Directory structure
 The following commands must be run to build the directory structure for the experiments.
 ```
@@ -16,9 +23,10 @@ Trained FastText word embeddings for the CodeSearchNet dataset's six divisions c
 It is possible to train a different FastText model or with a different dimension size. The raw text data for that purpose can be found [here](https://drive.google.com/file/d/11HBX-D7Y7E8Hjhx6OZoZ8v4LuokLJDYV/view?usp=sharing). The steps for training a FastText model in this data are as follows:-
 
 1. Download the raw text data and place the files in the Data/Texts directory.
-2. Install the FastText package
+2. If none of the dependencies are installed, install the FastText and Pandas packages.
 ```
 pip install fasttext
+pip install pandas
 ```
 3. Edit the ``embedding`` and ``dimensions`` variables' values in ProcessData.py to desired values. The default values are -
 ```
@@ -33,7 +41,7 @@ python ProcessData.py
 ```
 
 ## Code search
-To run the code search experiment with the default parameters, run the CodeSearch.py file.
+Once the dependencies are installed, run the CodeSearch.py file to run the code search experiment with the default parameters.
 ```
 python CodeSearch.py
 ```

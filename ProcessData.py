@@ -109,7 +109,7 @@ def split_code_docstring(code):
     return docstring, code
 
 
-def trainLanguageModel(lang, embedding):
+def trainLanguageModel(lang, embedding, dimensions=300):
     w_filename = "Data/Texts/"+lang+".txt"
     f = open(w_filename, "w+")
     types_of_data = ["train", "valid", "test"]
@@ -141,7 +141,7 @@ def trainLanguageModel(lang, embedding):
                 f.write(filter(str(t)) + "\n")
     print("\n")
     f.close()
-    model = fasttext.train_unsupervised(w_filename, embedding, dim=300)
+    model = fasttext.train_unsupervised(w_filename, embedding, dim=dimensions)
     model_path = "Data/Trained models/"+lang
     model.save_model(model_path + ".bin")
 
@@ -189,12 +189,12 @@ def generateEmbeddings(lang, embedding):
         df.to_csv("Data/" + embedding + "/CodeSearch300/" + filename, index=False)
 
 
-def processData(lang="python", embedding="cbow"):
-    trainLanguageModel(lang, embedding)
+def processData(lang="python", embedding="cbow", dimensions=300):
+    trainLanguageModel(lang, embedding, dimensions=dimensions)
     generateEmbeddings(lang, embedding)
 
 embedding = "cbow"
-
+dimensions = 300
 processData("CodeSearch_PYTHON")
 processData("AdvTest")
 processData("DGMS")

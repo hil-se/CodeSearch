@@ -18,9 +18,9 @@ mkdir Results/{CodeSearch,Tensors}
 ```
 
 ## Data
-Trained FastText word embeddings for the CodeSearchNet dataset's six divisions can be found [here](https://drive.google.com/file/d/1z--18A12T6JEBO5q8-q_MwB0lCGN-gaN/view?usp=sharing). Download the files and place them inside the Data/cbow/CodeSearch300 directory. These embeddings have a dimension size of 300, trained on a FastText CBOW model.
+Trained FastText word embeddings for the datasets' can be found [here](https://drive.google.com/drive/folders/19IjAwyswD8PRmwZTuyU0yVe28zbWTKYg?usp=drive_link). Download the files and place them inside the Data/cbow/CodeSearch300 directory. These embeddings have a dimension size of 300, trained on a FastText CBOW model.
 
-It is possible to train a different FastText model or with a different dimension size. The raw text data for that purpose can be found [here](https://drive.google.com/file/d/11HBX-D7Y7E8Hjhx6OZoZ8v4LuokLJDYV/view?usp=sharing). The steps for training a FastText model in this data are as follows:-
+It is possible to train a different FastText model or with a different dimension size. The raw text data for that purpose can be found [here](https://drive.google.com/drive/folders/1ymBCRS25LSku5QqfUtmQXlZZC7YdmCXa?usp=sharing). The steps for training a FastText model in this data are as follows:-
 
 1. Download the raw text data and place the files in the Data/Texts directory.
 2. If none of the dependencies are installed, install the FastText and Pandas packages.
@@ -41,9 +41,18 @@ python ProcessData.py
 ```
 
 ## Code search
-Once the dependencies are installed, run the CodeSearch.py file to run the code search experiment with the default parameters.
+Once the dependencies are installed, run the corresponding files to run the code search experiment on that dataset with the default parameters.
+For CodeSearchNet Python, run -
 ```
 python CodeSearch.py
 ```
+For AdvTest Python, run -
+```
+python AdvTest.py
+```
+For DGMS, run -
+```
+python DGMS.py
+```
 
-The parameters values can be changed to conduct different experiments. The parameters and their values are explained in CodeSearch.py.
+The parameters values can be changed to conduct different experiments. The parameters and their values are explained in each file.

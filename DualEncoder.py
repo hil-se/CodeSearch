@@ -133,6 +133,9 @@ class DualEncoderAll(tf.keras.Model):
         trues = trues.flatten()
         metric = Metrics(trues, preds)
         metric.calcCosineSim(simmat)
+        metric.mrr(source_embeddings, target_embeddings, simmat)
+        matFull = metric.getCosMat(simmat, (simmat.numpy().shape[1]))
+        metric.map = MAP(matFull)
         return metric
 
     def testRetreivalRaw(self, feature, k = 3):

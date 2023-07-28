@@ -41,7 +41,8 @@ python ProcessData.py
 ```
 
 ## Code search
-Once the dependencies are installed, run the corresponding files to run the code search experiment on that dataset with the default parameters.
+Once the dependencies are installed, run the corresponding files to run the code search experiment on that dataset with the default parameters. The parameters values can be changed to conduct different experiments.
+
 For CodeSearchNet Python, run -
 ```
 python CodeSearch.py
@@ -54,5 +55,3 @@ For DGMS, run -
 ```
 python DGMS.py
 ```
-
-The parameters values can be changed to conduct different experiments. The parameters and their values are explained in each file.

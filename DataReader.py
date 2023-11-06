@@ -4,14 +4,11 @@ import tensorflow as tf
 from pdb import set_trace
 
 class Reader:
-    def __init__(self, embedding="", testset=False):
+    def __init__(self, folder="CodeSearch300", embedding="", testset=False):
         if testset:
             self.path = "Results/Tensors/"
         else:
-            if embedding=="":
-                self.path = "Data/"
-            else:
-                self.path = "Data/"+embedding+"/CodeSearch300/"
+            self.path = "Data/"+embedding+"/"+folder+"/"
 
     def load(self, name):
         self.source, self.target= self.load_embeddings(self.path + name + ".csv")
@@ -36,4 +33,3 @@ class Reader:
         self.target_series = embeddings
         target = np.array([emb for emb in embeddings])
         return source, target
-

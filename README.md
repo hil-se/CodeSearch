@@ -39,13 +39,21 @@ When the dimension size is not specified in ``fasttext.train_unsupervised()``, t
 ```
 python ProcessData.py
 ```
+To run experiments with separate language models, run the ProcessDataSeparate.py file.
+```
+python ProcessDataSeparate.py
+```
 
 ## Code search
 Once the dependencies are installed, run the corresponding files to run the code search experiment on that dataset with the default parameters. The parameters values can be changed to conduct different experiments.
 
-For CodeSearchNet Python, run -
+For CodeSearchNet Python (Limited), run -
 ```
 python CodeSearch.py
+```
+For CodeSearchNet Python (Full), run -
+```
+python CodeSearchFull.py
 ```
 For AdvTest Python, run -
 ```

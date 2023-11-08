@@ -94,10 +94,12 @@ class DualEncoderAll(tf.keras.Model):
         targets = tf.keras.activations.softmax(
             (source_similarity + target_similarity) / (2 * self.temperature)
         )
-        # ones = tf.ones(tf.shape(targets))
-        # targets = tf.math.subtract(ones, targets)
+        # Convert values to calculate loss for y=0, when the artifacts are similar
+        #                                  and y=1, when the artifacts are dissimilar
+        ones = tf.ones(tf.shape(targets))
+        targets = tf.math.subtract(ones, targets)
         y_pred = tf.linalg.norm(source_embeddings - target_embeddings)
-        # Compute the contrastive loss
+        y_pred = tf.math.subtract(ones, y_pred)
         loss = tfa.losses.contrastive_loss(y_true=targets, y_pred=y_pred)
         # Return the contrastive loss over the batch.
         return loss

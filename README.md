@@ -18,7 +18,7 @@ mkdir Results/{CodeSearch,Tensors}
 ```
 
 ## Data
-Trained FastText word embeddings for the datasets' can be found [here](https://drive.google.com/drive/folders/19IjAwyswD8PRmwZTuyU0yVe28zbWTKYg?usp=drive_link). Download the files and place them inside the Data/cbow/CodeSearch300 directory. These embeddings have a dimension size of 300, trained on a FastText CBOW model.
+Trained FastText word embeddings for the datasets' can be found [here](https://figshare.com/s/d9d7aabd02ec0a726b2d). Download the files and place them inside the Data/cbow/CodeSearch300 directory. These embeddings have a dimension size of 300, trained on a FastText CBOW model.
 
 It is possible to train a different FastText model or with a different dimension size. The raw text data for that purpose can be found [here](https://figshare.com/s/93094c811a43cd21471f). The steps for training a FastText model in this data are as follows:-
 
